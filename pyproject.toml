@@ -1,0 +1,12 @@
+[project]
+name = "decorator-pattern"
+version = "0.1.0"
+description = "Лабораторная работа №2"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "pytest>=9.0.2",
+    "pytest-mock>=3.15.1",
+    "pyyaml>=6.0.3",
+    "requests>=2.32.5",
+]
