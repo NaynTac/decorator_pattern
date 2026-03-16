@@ -1,7 +1,3 @@
-import requests
-import yaml
-import csv
-
 from abc import ABCMeta, abstractmethod
 from datetime import date
 
@@ -16,7 +12,6 @@ class CurrenciesABC():
 
 
 class Currencies(CurrenciesABC):
-    import requests
     """
     Основной класс, содержащий метод
     для получения курса валют в формате JSON
@@ -30,6 +25,7 @@ class Currencies(CurrenciesABC):
         Аргументы:
         - url: str – url для запроса
         """ 
+        import requests
 
         response = requests.get(url)
         response.raise_for_status()
@@ -56,13 +52,13 @@ class Decorator(CurrenciesABC):
 
 
 class CurrenciesDecoratorCSV(Decorator):
-    import csv
     """
     Декоратор класса Currencies, с измененным основным методом
     для получения данных в формате CSV и записи их в файл
     """
     
     def get_currencies(self) -> None:
+        import csv
 
         with open(f"data/csv-{date.today()}.csv", "w", newline="") as csv_f:
 
@@ -90,13 +86,13 @@ class CurrenciesDecoratorCSV(Decorator):
 
 
 class CurrenciesDecoratorYAML(Decorator):
-    import yaml
     """
     Декоратор класса Currencies, с измененным основным методом
     для получения данных в формате YAML и записи их в файл
     """
     
     def get_currencies(self) -> None:
+        import yaml
 
         data = self.currencies_obj.get_currencies()
 

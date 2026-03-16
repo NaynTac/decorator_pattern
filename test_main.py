@@ -1,7 +1,7 @@
 import pytest
 
 from unittest.mock import call
-from main import *
+from main import Currencies, CurrenciesDecoratorCSV, CurrenciesDecoratorYAML
 
 
 def test_currencies(mocker) -> None:
