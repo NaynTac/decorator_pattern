@@ -16,6 +16,7 @@ class CurrenciesABC():
 
 
 class Currencies(CurrenciesABC):
+    import requests
     """
     Основной класс, содержащий метод
     для получения курса валют в формате JSON
@@ -55,6 +56,7 @@ class Decorator(CurrenciesABC):
 
 
 class CurrenciesDecoratorCSV(Decorator):
+    import csv
     """
     Декоратор класса Currencies, с измененным основным методом
     для получения данных в формате CSV и записи их в файл
@@ -88,6 +90,7 @@ class CurrenciesDecoratorCSV(Decorator):
 
 
 class CurrenciesDecoratorYAML(Decorator):
+    import yaml
     """
     Декоратор класса Currencies, с измененным основным методом
     для получения данных в формате YAML и записи их в файл
